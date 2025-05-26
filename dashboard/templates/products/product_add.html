@@ -1,0 +1,32 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Dashboard - Merhaba {{ user.username }}{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <div class="form-container">
+      <h2>Ürün Ekle</h2>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="id_name">Ürün Adı</label>
+        {{ form.name }}
+
+        <label for="id_description">Açıklama</label>
+        {{ form.description }}
+
+        <label for="id_price">Fiyat</label>
+        {{ form.price }}
+
+        <label for="id_image">Görsel</label>
+        {{ form.image }}
+
+        <button type="submit">Ekle</button>
+      </form>
+      <a href="{% url 'product_list' %}" class="back-link">← Ürün listesine geri dön</a>
+    </div>
+  </div>
+
+</body>
+</html>
+{% endblock %}

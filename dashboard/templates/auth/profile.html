@@ -1,0 +1,48 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Dashboard - Merhaba {{ user.username }}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="header">
+            <h2>Merhaba {{ user.username }}!</h2>
+        </div>
+
+        <!-- Mesajlar -->
+        {% if messages %}
+            <div class="alert-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Profil Bilgileri -->
+        <div class="form-container">
+            <h3>Profil Bilgilerim</h3>
+            <p><strong>Ad Soyad:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+            <p><strong>E-posta:</strong> {{ user.email }}</p>
+            <p><strong>Kullanıcı Adı:</strong> {{ user.username }}</p>
+        </div>
+
+        <!-- Şifre Değiştirme -->
+        <div class="form-container">
+            <h3>Şifreni Değiştir</h3>
+            <form method="POST" action="{% url 'change_password' %}">
+                {% csrf_token %}
+                <input type="password" name="old_password" placeholder="Eski Şifre" required>
+                <input type="password" name="new_password" placeholder="Yeni Şifre" required>
+                <input type="password" name="confirm_password" placeholder="Yeni Şifre (Tekrar)" required>
+                <button type="submit">Şifreyi Değiştir</button>
+            </form>
+        </div>
+
+        <a href="{% url 'logout' %}" class="btn-logout">Çıkış yap</a>
+
+        <div class="footer">
+            <p>&copy; 2025 CRM Project. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+{% endblock %}

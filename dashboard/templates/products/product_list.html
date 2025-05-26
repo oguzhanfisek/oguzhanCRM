@@ -1,0 +1,62 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}
+Dashboard - Merhaba {{ user.username }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+  <div class="header">
+    <h2>Ürünler</h2>
+    <p>Burada mevcut ürünleri görebilirsiniz.</p>
+  </div>
+
+  <a href="{% url 'add_product' %}" class="add-product-btn">+</a>
+
+  <div class="product-container">
+    {% for product in products %}
+    <div class="product-card">
+      {% if product.image %}
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+      {% else %}
+      <img
+        src="https://via.placeholder.com/280x200?text=Resim+Yok"
+        alt="Ürün Resmi"
+      />
+      {% endif %}
+
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <div class="price">₺{{ product.price }}</div>
+
+      <!-- ✅ Yayınla / Yayından Kaldır Butonu -->
+      <form method="POST" action="{% url 'toggle_publish' product.id %}">
+        {% csrf_token %}
+        {% if product.is_published %}
+        <button type="submit" class="btn-unpublish">✖ Yayından Kaldır</button>
+        {% else %}
+        <button type="submit" class="btn-publish">✔ Yayınla</button>
+        {% endif %}
+      </form>
+
+      <!-- ✏️ Düzenle Butonu -->
+      <a href="{% url 'edit_product' product.id %}" class="btn-edit">Düzenle</a>
+
+      <!-- ❌ Silme Butonu -->
+      <form method="POST" action="{% url 'delete_product' product.id %}">
+        {% csrf_token %}
+        <button
+          type="submit"
+          class="btn-delete"
+          onclick="return confirm('Bu ürünü silmek istediğinize emin misiniz?');"
+        >
+          Sil
+        </button>
+      </form>
+    </div>
+    {% empty %}
+    <p>Henüz ürün eklenmemiş.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

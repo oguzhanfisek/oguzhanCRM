@@ -1,0 +1,37 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Kullanıcılar - Dashboard{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="header">
+        <h2>Kullanıcılar</h2>
+        <p>Sistemdeki tüm kullanıcıları aşağıda görebilirsiniz.</p>
+    </div>
+
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>Kullanıcı Adı</th>
+                <th>Email</th>
+                <th>Son Giriş</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.first_name }} {{ user.last_name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{% if user.last_login %}{{ user.last_login|date:"d M Y H:i" }}{% else %}Giriş yapmadı{% endif %}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="empty-msg">Henüz kullanıcı bulunmamaktadır.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Ürünü Düzenle{% endblock %}
+
+{% block content %}
+  <h2>{{ product.name }} - Düzenle</h2>
+  <form method="POST" enctype="multipart/form-data" id="productForm">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="image-preview-container">
+      <label>Mevcut Görsel:</label><br>
+      {% if product.image %}
+        <img id="imagePreview" src="{{ product.image.url }}" alt="Ürün Görseli" class="image-preview">
+      {% else %}
+        <img id="imagePreview" src="" alt="Önizleme yok" class="image-preview" style="display:none;">
+      {% endif %}
+    </div>
+
+    <button type="submit" class="btn-primary">Kaydet</button>
+  </form>
+
+  <script>
+    const fileInput = document.querySelector('input[type="file"]');
+    const imagePreview = document.getElementById('imagePreview');
+
+    fileInput.addEventListener('change', function(event) {
+      const [file] = fileInput.files;
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+          imagePreview.src = e.target.result;
+          imagePreview.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+      } else {
+        imagePreview.src = '';
+        imagePreview.style.display = 'none';
+      }
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Raporlar{% endblock %}
+
+{% block content %}
+<h1>📊 Raporlar</h1>
+
+<div class="report-container">
+    <table class="report-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Rapor Adı</th>
+                <th>Tarih</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Satış Performans Raporu</td>
+                <td>18 Mayıs 2025</td>
+                <td><span class="status completed">Tamamlandı</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Kullanıcı Aktivite Raporu</td>
+                <td>17 Mayıs 2025</td>
+                <td><span class="status pending">Hazırlanıyor</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Stok Durum Raporu</td>
+                <td>15 Mayıs 2025</td>
+                <td><span class="status failed">Hata Verdi</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

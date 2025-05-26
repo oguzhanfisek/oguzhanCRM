@@ -1,0 +1,113 @@
+{% extends 'base_generic.html' %}
+
+{% load static %}  <!-- Static tag'ini yükleyin -->
+
+{% block title %}Dashboard - Merhaba {{ user.username }}{% endblock %}
+
+{% block head %}
+  <!-- Dashboard CSS Bağlantısı -->
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1 class="dashboard-header">Merhaba {{ user.username }}!</h1>
+
+  <div class="dashboard-cards">
+    <div class="dashboard-card">
+      <h3>Toplam Kullanıcı</h3>
+      <p>128</p>
+    </div>
+    <div class="dashboard-card">
+      <h3>Ürün Sayısı</h3>
+      <p>47</p>
+    </div>
+    <div class="dashboard-card">
+      <h3>Yeni Kayıtlar</h3>
+      <p>8</p>
+    </div>
+  </div>
+
+  <div class="dashboard-charts">
+    <div class="chart-box">
+      <h4>Satış Trendleri</h4>
+      <canvas id="salesChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h4>Kullanıcı Artışı</h4>
+      <canvas id="userChart"></canvas>
+    </div>
+  </div>
+
+  <h3>Son Veriler</h3>
+  <table class="dashboard-table">
+    <thead>
+      <tr>
+        <th>Başlık</th>
+        <th>Değer</th>
+        <th>Tarih</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Veri 1</td><td>500</td><td>12 Mayıs 2025</td></tr>
+      <tr><td>Veri 2</td><td>350</td><td>12 Mayıs 2025</td></tr>
+      <tr><td>Veri 3</td><td>450</td><td>12 Mayıs 2025</td></tr>
+      <tr><td>Veri 4</td><td>550</td><td>12 Mayıs 2025</td></tr>
+    </tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Satış Trendleri Grafiği
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    const salesChart = new Chart(salesCtx, {
+      type: 'line',
+      data: {
+        labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs'],
+        datasets: [{
+          label: 'Satışlar',
+          data: [50, 75, 100, 80, 120],
+          borderColor: '#27ae60',
+          backgroundColor: 'rgba(39, 174, 96, 0.2)',
+          fill: true,
+          tension: 0.4,
+          borderWidth: 3,
+          pointRadius: 4,
+          pointBackgroundColor: '#27ae60',
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        },
+        plugins: {
+          legend: { labels: { font: { size: 14 } } }
+        }
+      }
+    });
+
+    // Kullanıcı Artışı Grafiği
+    const userCtx = document.getElementById('userChart').getContext('2d');
+    const userChart = new Chart(userCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs'],
+        datasets: [{
+          label: 'Yeni Kullanıcılar',
+          data: [5, 10, 8, 12, 15],
+          backgroundColor: '#2980b9',
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        },
+        plugins: {
+          legend: { labels: { font: { size: 14 } } }
+        }
+      }
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Mağaza - Yayınlanan Ürünler</h2>
+
+  {% if products %}
+    <div class="product-grid">
+      {% for product in products %}
+        <div class="product-card">
+          <h3>{{ product.name }}</h3>
+          {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width:200px;"/>
+          {% endif %}
+          <p>{{ product.description|truncatewords:20 }}</p>
+          <p>Fiyat: {{ product.price }} ₺</p>
+          <!-- Buraya ürün detay linki ya da satın alma butonu ekleyebilirsin -->
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Henüz yayınlanan ürün yok.</p>
+  {% endif %}
+{% endblock %}
