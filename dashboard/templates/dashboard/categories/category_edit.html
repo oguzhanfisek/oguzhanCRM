@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h2 class="edit-title">Kategori Düzenle</h2>
+
+<form method="POST" class="edit-form">
+  {% csrf_token %}
+  <label for="name" class="edit-label">Kategori Adı:</label>
+  <input type="text" id="name" name="name" value="{{ category.name }}" required class="edit-input">
+  <button type="submit" class="edit-btn">Kaydet</button>
+</form>
+
+{% endblock %}

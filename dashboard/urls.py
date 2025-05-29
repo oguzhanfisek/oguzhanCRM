@@ -3,11 +3,14 @@ from .views.auth_views import register, login_view, logout_view, users_page, rep
 from .views.dashboard_views import dashboard_view
 from .views.product_view import (
     product_list, add_product, delete_product, edit_product, publish_product,
-    product_list_store, toggle_publish, published_products
+    product_list_store, toggle_publish, published_products, category_list, category_add
 )
+from .views.category_views import category_edit, category_delete
+
 from .views.user_views import profile_view, change_password
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('', dashboard_view, name='home'),
@@ -28,6 +31,11 @@ urlpatterns = [
     path('store/', product_list_store, name='store'),
     path('products/toggle/<int:product_id>/', toggle_publish, name='toggle_publish'),
     path('urunler/', published_products, name='published_products'),
-    path('store/', product_list_store, name='store'),  # mağaza sayfası
+    path('store/', product_list_store, name='store'),
+    path('kategoriler/ekle/', category_add, name='category_add'),
+    path('kategoriler/', category_list, name='category_list'),
+    path('kategoriler/edit/<int:category_id>/', category_edit, name='category_edit'),
+    path('kategoriler/delete/<int:category_id>/', category_delete, name='category_delete'),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

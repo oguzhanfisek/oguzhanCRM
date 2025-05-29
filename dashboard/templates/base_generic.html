@@ -1045,6 +1045,223 @@ h2 {
 }
 
 
+
+
+
+
+.category-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 15px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.category-title {
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.category-table-header-row {
+  background-color: #007bff;
+  color: white;
+  text-align: left;
+}
+
+.category-th, .category-td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.category-table-row:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.category-table-row:hover {
+  background-color: #e0f0ff;
+  cursor: pointer;
+}
+
+.no-category-msg {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  padding: 20px 0;
+}
+
+
+
+
+
+.add-category-btn {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.add-category-btn:hover {
+  background-color: #218838;
+}
+
+
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-sm {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+}
+
+
+
+
+.category-form-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+.category-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.category-form-container .form-label {
+  font-weight: 600;
+  color: #555;
+}
+.category-form-container .form-control {
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s ease;
+}
+.category-form-container .form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px #28a745;
+}
+.category-form-container .btn-success {
+  width: 100%;
+  font-weight: 600;
+  background-color: #28a745;
+  border-color: #28a745;
+  transition: background-color 0.3s ease;
+}
+.category-form-container .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+.category-form-container .btn-secondary {
+  margin-top: 10px;
+  width: 100%;
+}
+
+
+
+  .edit-form {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .edit-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .edit-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .edit-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+  }
+
+  .edit-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  .edit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .edit-btn:hover {
+    background-color: #0056b3;
+  }
   </style>
 </head>
 
@@ -1068,8 +1285,9 @@ h2 {
     <a href="{% url 'home' %}">Ana Sayfa</a>
     <a href="{% url 'profile' %}">Profilim</a>
     <a href="{% url 'settings' %}">Ayarlar</a></li>
-    <a href="{% url 'reports' %}">Raporlar</a></li>
+    <!-- <a href="{% url 'reports' %}">Raporlar</a></li> -->
     <a href="{% url 'users_page' %}">Kullanıcılar</a>
+    <a href="{% url 'category_list' %}">Kategoriler</a>
     <a href="{% url 'product_list' %}">Ürünler</a>
     <a href="{% url 'store' %}" target="_blank" rel="noopener noreferrer">Yayınlanan Ürünler</a>
     <a href="{% url 'logout' %}" class="logout">Çıkış Yap</a>

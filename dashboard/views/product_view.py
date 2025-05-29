@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from ..models.product_model import Product
 from ..forms.product_form import ProductForm
+from dashboard.models.category_model import ProductCategory
+from django import forms
+
+
 
 def product_list(request):
     products = Product.objects.all()
@@ -56,3 +60,23 @@ def published_products(request):
 def product_list_store(request):
     products = Product.objects.filter(is_published=True)
     return render(request, 'products/product_list_store.html', {'products': products})
+
+
+def category_list(request):
+    categories = ProductCategory.objects.all()
+    return render(request, 'categories/category.html', {'categories': categories})
+
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = ProductCategory
+        fields = ['name']
+
+def category_add(request):
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('category_list')
+    else:
+        form = CategoryForm()
+    return render(request, 'categories/category_add.html', {'form': form})

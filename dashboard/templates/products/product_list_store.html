@@ -11,6 +11,7 @@
           {% if product.image %}
             <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width:200px;"/>
           {% endif %}
+          <p><strong>Kategori:</strong> {{ product.category.name|default:"Kategori yok" }}</p>
           <p>{{ product.description|truncatewords:20 }}</p>
           <p>Fiyat: {{ product.price }} ₺</p>
           <!-- Buraya ürün detay linki ya da satın alma butonu ekleyebilirsin -->

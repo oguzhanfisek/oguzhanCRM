@@ -6,7 +6,7 @@
   <div class="content">
     <div class="form-container">
       <h2>Ürün Ekle</h2>
-      <form method="POST" enctype="multipart/form-data">
+      <form method="POST" enctype="multipart/form-data" id="productForm">
         {% csrf_token %}
         
         <label for="id_name">Ürün Adı</label>
@@ -18,8 +18,16 @@
         <label for="id_price">Fiyat</label>
         {{ form.price }}
 
+        <label for="id_category">Kategori</label>
+        {{ form.category }}
+
         <label for="id_image">Görsel</label>
         {{ form.image }}
+
+        <div class="image-preview-container">
+          <label>Görsel Önizleme:</label><br>
+          <img id="imagePreview" src="" alt="Önizleme yok" class="image-preview" style="display:none;">
+        </div>
 
         <button type="submit">Ekle</button>
       </form>
@@ -27,6 +35,33 @@
     </div>
   </div>
 
-</body>
-</html>
+  <script>
+    const fileInput = document.querySelector('input[type="file"]');
+    const imagePreview = document.getElementById('imagePreview');
+
+    fileInput.addEventListener('change', function(event) {
+      const [file] = fileInput.files;
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+          imagePreview.src = e.target.result;
+          imagePreview.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+      } else {
+        imagePreview.src = '';
+        imagePreview.style.display = 'none';
+      }
+    });
+  </script>
+
+  <style>
+    .image-preview {
+      max-width: 280px;
+      max-height: 200px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
 {% endblock %}

@@ -2219,3 +2219,2057 @@ Traceback (most recent call last):
     _mysql.connection.query(self, query)
 django.db.utils.OperationalError: (1054, "Unknown column 'dashboard_product.is_published' in 'field list'")
 ERROR 2025-05-24 23:42:05,979 basehttp "GET /products/ HTTP/1.1" 500 231739
+ERROR 2025-05-28 18:35:39,317 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'crm_db.dashboard_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 65, in category_list
+    return render(request, 'products/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1169, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'crm_db.dashboard_category' doesn't exist")
+ERROR 2025-05-28 18:35:39,342 basehttp "GET /kategoriler/ HTTP/1.1" 500 231481
+ERROR 2025-05-28 18:36:34,465 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'crm_db.dashboard_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 65, in category_list
+    return render(request, 'products/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1169, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'crm_db.dashboard_category' doesn't exist")
+ERROR 2025-05-28 18:36:34,499 basehttp "GET /kategoriler/ HTTP/1.1" 500 231618
+ERROR 2025-05-28 18:42:15,637 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 65, in category_list
+    return render(request, 'products/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_add' not found. 'category_add' is not a valid view function or pattern name.
+ERROR 2025-05-28 18:42:15,652 basehttp "GET /kategoriler/ HTTP/1.1" 500 159027
+ERROR 2025-05-28 18:43:52,164 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 65, in category_list
+    return render(request, 'products/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_add' not found. 'category_add' is not a valid view function or pattern name.
+ERROR 2025-05-28 18:43:52,187 basehttp "GET /kategoriler/ HTTP/1.1" 500 157310
+ERROR 2025-05-28 18:43:52,927 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 65, in category_list
+    return render(request, 'products/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_add' not found. 'category_add' is not a valid view function or pattern name.
+ERROR 2025-05-28 18:43:52,936 basehttp "GET /kategoriler/ HTTP/1.1" 500 157310
+ERROR 2025-05-28 18:43:53,147 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 65, in category_list
+    return render(request, 'products/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_add' not found. 'category_add' is not a valid view function or pattern name.
+ERROR 2025-05-28 18:43:53,154 basehttp "GET /kategoriler/ HTTP/1.1" 500 157310
+ERROR 2025-05-28 18:54:01,191 log Internal Server Error: /kategoriler/edit/1/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 95, in category_edit_view
+    return render(request, 'dashboard/category_edit.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/category_edit.html
+ERROR 2025-05-28 18:54:01,196 basehttp "GET /kategoriler/edit/1/ HTTP/1.1" 500 86368
+ERROR 2025-05-28 18:56:33,463 log Internal Server Error: /kategoriler/edit/1/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 95, in category_edit_view
+    return render(request, 'dashboard/category_edit.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/category_edit.html
+ERROR 2025-05-28 18:56:33,466 basehttp "GET /kategoriler/edit/1/ HTTP/1.1" 500 86368
+ERROR 2025-05-28 18:56:36,846 log Internal Server Error: /kategoriler/delete/1/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 102, in category_delete_view
+    return render(request, 'dashboard/category_confirm_delete.html', {'category': category})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/category_confirm_delete.html
+ERROR 2025-05-28 18:56:36,848 basehttp "GET /kategoriler/delete/1/ HTTP/1.1" 500 85251
+ERROR 2025-05-28 18:56:39,016 log Internal Server Error: /kategoriler/edit/1/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 95, in category_edit_view
+    return render(request, 'dashboard/category_edit.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/category_edit.html
+ERROR 2025-05-28 18:56:39,020 basehttp "GET /kategoriler/edit/1/ HTTP/1.1" 500 86368
+ERROR 2025-05-28 18:57:21,118 log Internal Server Error: /kategoriler/edit/1/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 95, in category_edit_view
+    return render(request, 'dashboard/category_edit.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/category_edit.html
+ERROR 2025-05-28 18:57:21,122 basehttp "GET /kategoriler/edit/1/ HTTP/1.1" 500 86505
+ERROR 2025-05-28 18:57:21,828 log Internal Server Error: /kategoriler/edit/1/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 95, in category_edit_view
+    return render(request, 'dashboard/category_edit.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/category_edit.html
+ERROR 2025-05-28 18:57:21,837 basehttp "GET /kategoriler/edit/1/ HTTP/1.1" 500 86505
+ERROR 2025-05-28 18:57:23,697 log Internal Server Error: /kategoriler/edit/1/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 95, in category_edit_view
+    return render(request, 'dashboard/category_edit.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/category_edit.html
+ERROR 2025-05-28 18:57:23,705 basehttp "GET /kategoriler/edit/1/ HTTP/1.1" 500 86368
+ERROR 2025-05-28 18:57:54,151 log Internal Server Error: /kategoriler/edit/1/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 95, in category_edit_view
+    return render(request, 'dashboard/category_edit.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/category_edit.html
+ERROR 2025-05-28 18:57:54,154 basehttp "GET /kategoriler/edit/1/ HTTP/1.1" 500 86368
+ERROR 2025-05-28 18:59:01,674 log Internal Server Error: /urunler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 59, in published_products
+    return render(request, 'products/published_list.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/published_list.html
+ERROR 2025-05-28 18:59:01,687 basehttp "GET /urunler/ HTTP/1.1" 500 85871
+ERROR 2025-05-28 18:59:05,267 log Internal Server Error: /urunler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 59, in published_products
+    return render(request, 'products/published_list.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/published_list.html
+ERROR 2025-05-28 18:59:05,273 basehttp "GET /urunler/ HTTP/1.1" 500 85871
+ERROR 2025-05-28 18:59:09,713 log Internal Server Error: /urunler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 59, in published_products
+    return render(request, 'products/published_list.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/published_list.html
+ERROR 2025-05-28 18:59:09,717 basehttp "GET /urunler/ HTTP/1.1" 500 85734
+ERROR 2025-05-28 18:59:15,418 log Internal Server Error: /urunler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 59, in published_products
+    return render(request, 'products/published_list.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/published_list.html
+ERROR 2025-05-28 18:59:15,422 basehttp "GET /urunler/ HTTP/1.1" 500 85873
+ERROR 2025-05-28 19:00:24,885 log Internal Server Error: /urunler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 59, in published_products
+    return render(request, 'products/published_list.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/published_list.html
+ERROR 2025-05-28 19:00:24,888 basehttp "GET /urunler/ HTTP/1.1" 500 85736
+ERROR 2025-05-28 19:00:28,192 log Internal Server Error: /urunler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 59, in published_products
+    return render(request, 'products/published_list.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/published_list.html
+ERROR 2025-05-28 19:00:28,194 basehttp "GET /urunler/ HTTP/1.1" 500 85736
+ERROR 2025-05-28 19:15:46,626 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 67, in category_list
+    return render(request, 'products/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/category.html
+ERROR 2025-05-28 19:15:46,631 basehttp "GET /kategoriler/ HTTP/1.1" 500 85753
+ERROR 2025-05-28 19:16:14,420 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 67, in category_list
+    return render(request, 'products/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/category.html
+ERROR 2025-05-28 19:16:14,426 basehttp "GET /kategoriler/ HTTP/1.1" 500 85753
+ERROR 2025-05-28 19:28:55,905 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 7, in category_list
+    return render(request, 'dashboard/categories/category_list.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/categories/category_list.html
+ERROR 2025-05-28 19:28:55,912 basehttp "GET /kategoriler/ HTTP/1.1" 500 85955
+ERROR 2025-05-28 19:28:57,152 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 7, in category_list
+    return render(request, 'dashboard/categories/category_list.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/categories/category_list.html
+ERROR 2025-05-28 19:28:57,156 basehttp "GET /kategoriler/ HTTP/1.1" 500 85955
+ERROR 2025-05-28 19:28:57,335 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 7, in category_list
+    return render(request, 'dashboard/categories/category_list.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/categories/category_list.html
+ERROR 2025-05-28 19:28:57,339 basehttp "GET /kategoriler/ HTTP/1.1" 500 85955
+ERROR 2025-05-28 19:32:17,438 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' not found. 'category_list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:32:17,457 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 158798
+ERROR 2025-05-28 19:33:18,694 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:33:18,703 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145452
+ERROR 2025-05-28 19:33:19,450 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:33:19,462 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145452
+ERROR 2025-05-28 19:33:19,633 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:33:19,644 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145452
+ERROR 2025-05-28 19:33:19,860 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:33:19,869 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145452
+ERROR 2025-05-28 19:33:20,132 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:33:20,141 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145452
+ERROR 2025-05-28 19:33:41,572 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:33:41,588 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145452
+ERROR 2025-05-28 19:33:41,721 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:33:41,725 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145452
+ERROR 2025-05-28 19:33:43,639 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:33:43,651 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145315
+ERROR 2025-05-28 19:34:11,867 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 82, in category_add
+    return render(request, 'categories/category_add.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:34:11,879 basehttp "GET /kategoriler/ekle/ HTTP/1.1" 500 145315
+ERROR 2025-05-28 19:38:26,632 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 79, in category_add
+    return redirect('category-list')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 130, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:38:26,636 basehttp "POST /kategoriler/ekle/ HTTP/1.1" 500 89380
+ERROR 2025-05-28 19:49:59,303 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 79, in category_add
+    return redirect('category-list')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 130, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:49:59,312 basehttp "POST /kategoriler/ekle/ HTTP/1.1" 500 89339
+ERROR 2025-05-28 19:50:57,397 log Internal Server Error: /kategoriler/ekle/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 79, in category_add
+    return redirect('category-list')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 130, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-list' not found. 'category-list' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:50:57,401 basehttp "POST /kategoriler/ekle/ HTTP/1.1" 500 89339
+ERROR 2025-05-28 19:58:08,066 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\product_view.py", line 67, in category_list
+    return render(request, 'categories/category.html', {'categories': categories})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 211, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_edit' not found. 'category_edit' is not a valid view function or pattern name.
+ERROR 2025-05-28 19:58:08,083 basehttp "GET /kategoriler/ HTTP/1.1" 500 173767
+ERROR 2025-05-28 20:00:41,606 log Internal Server Error: /kategoriler/delete/4/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 49, in category_delete
+    return render(request, 'categories/category_confirm_delete.html', {'category': category})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: categories/category_confirm_delete.html
+ERROR 2025-05-28 20:00:41,611 basehttp "GET /kategoriler/delete/4/ HTTP/1.1" 500 85523
+ERROR 2025-05-28 20:03:00,793 log Internal Server Error: /kategoriler/edit/7/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 45, in category_edit
+    form = CategoryForm(instance=category)
+           ^^^^^^^^^^^^
+NameError: name 'CategoryForm' is not defined
+ERROR 2025-05-28 20:03:00,795 basehttp "GET /kategoriler/edit/7/ HTTP/1.1" 500 69779
+ERROR 2025-05-28 20:04:37,502 log Internal Server Error: /kategoriler/edit/7/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 32, in category_edit
+    form = CategoryForm(instance=category)
+           ^^^^^^^^^^^^
+NameError: name 'CategoryForm' is not defined
+ERROR 2025-05-28 20:04:37,506 basehttp "GET /kategoriler/edit/7/ HTTP/1.1" 500 69916
+ERROR 2025-05-28 20:06:13,885 log Internal Server Error: /kategoriler/edit/11/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 32, in category_edit
+    form = Category(instance=category)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Category() got an unexpected keyword argument 'instance'
+ERROR 2025-05-28 20:06:13,888 basehttp "GET /kategoriler/edit/11/ HTTP/1.1" 500 76372
+ERROR 2025-05-28 20:07:56,112 log Internal Server Error: /kategoriler/edit/11/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 32, in category_edit
+    return render(request, 'dashboard/categories/category_edit.html', {'category': category})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/categories/category_edit.html
+ERROR 2025-05-28 20:07:56,121 basehttp "GET /kategoriler/edit/11/ HTTP/1.1" 500 85433
+ERROR 2025-05-28 20:09:06,329 log Internal Server Error: /kategoriler/edit/11/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 32, in category_edit
+    return render(request, 'dashboard/categories/category_edit.html', {'category': category})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/categories/category_edit.html
+ERROR 2025-05-28 20:09:06,335 basehttp "GET /kategoriler/edit/11/ HTTP/1.1" 500 85433
+ERROR 2025-05-28 20:09:53,268 log Internal Server Error: /kategoriler/edit/11/
+Traceback (most recent call last):
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\oguzhanCRM\dashboard\views\category_views.py", line 32, in category_edit
+    return render(request, 'dashboard/categories/category_edit.html', {'category': category})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nova Akademi\Desktop\oguzhan\oguzhanCrm\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/categories/category_edit.html
+ERROR 2025-05-28 20:09:53,270 basehttp "GET /kategoriler/edit/11/ HTTP/1.1" 500 85433
+ERROR 2025-05-30 00:05:29,957 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'crm_db.dashboard_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\oguzhanCRM\dashboard\views\product_view.py", line 67, in category_list
+    return render(request, 'categories/category.html', {'categories': categories})
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1169, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'crm_db.dashboard_category' doesn't exist")
+ERROR 2025-05-30 00:05:29,966 basehttp "GET /kategoriler/ HTTP/1.1" 500 230105
+ERROR 2025-05-30 00:05:37,722 log Internal Server Error: /kategoriler/
+Traceback (most recent call last):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'crm_db.dashboard_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\oguzhanCRM\dashboard\views\product_view.py", line 67, in category_list
+    return render(request, 'categories/category.html', {'categories': categories})
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1169, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'crm_db.dashboard_category' doesn't exist")
+ERROR 2025-05-30 00:05:37,727 basehttp "GET /kategoriler/ HTTP/1.1" 500 230108
+ERROR 2025-05-30 00:43:17,660 log Internal Server Error: /add/
+Traceback (most recent call last):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'dashboard_category.description' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\oguzhanCRM\dashboard\views\product_view.py", line 21, in add_product
+    return render(request, 'products/product_add.html', {'form': form})
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 994, in render
+    return render_value_in_context(output, context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 973, in render_value_in_context
+    value = str(value)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\utils\html.py", line 376, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\boundfield.py", line 34, in __str__
+    return self.as_widget()
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\boundfield.py", line 93, in as_widget
+    return widget.render(
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\widgets.py", line 246, in render
+    context = self.get_context(name, value, attrs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\widgets.py", line 683, in get_context
+    context = super().get_context(name, value, attrs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\widgets.py", line 644, in get_context
+    context['widget']['optgroups'] = self.optgroups(name, context['widget']['value'], attrs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\widgets.py", line 592, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\models.py", line 1169, in __iter__
+    for obj in queryset:
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 353, in _iterator
+    yield from self._iterable_class(self, chunked_fetch=use_chunked_fetch, chunk_size=chunk_size)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1169, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'dashboard_category.description' in 'field list'")
+ERROR 2025-05-30 00:43:17,667 basehttp "GET /add/ HTTP/1.1" 500 270430
+ERROR 2025-05-30 00:43:21,429 log Internal Server Error: /add/
+Traceback (most recent call last):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'dashboard_category.description' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\oguzhanCRM\dashboard\views\product_view.py", line 21, in add_product
+    return render(request, 'products/product_add.html', {'form': form})
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 994, in render
+    return render_value_in_context(output, context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\template\base.py", line 973, in render_value_in_context
+    value = str(value)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\utils\html.py", line 376, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\boundfield.py", line 34, in __str__
+    return self.as_widget()
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\boundfield.py", line 93, in as_widget
+    return widget.render(
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\widgets.py", line 246, in render
+    context = self.get_context(name, value, attrs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\widgets.py", line 683, in get_context
+    context = super().get_context(name, value, attrs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\widgets.py", line 644, in get_context
+    context['widget']['optgroups'] = self.optgroups(name, context['widget']['value'], attrs)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\widgets.py", line 592, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\forms\models.py", line 1169, in __iter__
+    for obj in queryset:
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 353, in _iterator
+    yield from self._iterable_class(self, chunked_fetch=use_chunked_fetch, chunk_size=chunk_size)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1169, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\ozifi\OneDrive\Masaüstü\django\venv\lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'dashboard_category.description' in 'field list'")
+ERROR 2025-05-30 00:43:21,433 basehttp "GET /add/ HTTP/1.1" 500 270293

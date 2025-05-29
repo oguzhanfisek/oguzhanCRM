@@ -1,0 +1,16 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="category-form-container">
+  <h2>Yeni Kategori Ekle</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">Kategori Adı</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <button type="submit" class="btn btn-success">Ekle</button>
+    <a href="{% url 'category_list' %}" class="btn btn-secondary">İptal</a>
+  </form>
+</div>
+{% endblock %}

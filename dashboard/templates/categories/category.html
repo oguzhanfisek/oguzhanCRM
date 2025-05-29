@@ -1,0 +1,35 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="category-container mt-4">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2 class="category-title">Kategoriler</h2>
+    <a href="{% url 'category_add' %}" class="add-category-btn" title="Yeni Kategori Ekle">+</a>
+  </div>
+  <table class="category-table">
+    <thead>
+      <tr class="category-table-header-row">
+        <th class="category-th">ID</th>
+        <th class="category-th">Kategori Adı</th>
+        <th class="category-th">İşlemler</th> <!-- Yeni sütun -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in categories %}
+      <tr class="category-table-row">
+        <td class="category-td">{{ category.id }}</td>
+        <td class="category-td">{{ category.name }}</td>
+        <td class="category-td">
+          <a href="{% url 'category_edit' category.id %}" class="btn-edit" title="Düzenle">Düzenle</a>
+          <a href="{% url 'category_delete' category.id %}" class="btn-delete" title="Sil" onclick="return confirm('Bu kategoriyi silmek istediğinize emin misiniz?');">Sil</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="3" class="no-category-msg">Hiç kategori bulunamadı.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

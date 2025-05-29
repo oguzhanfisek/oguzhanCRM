@@ -26,6 +26,7 @@ Dashboard - Merhaba {{ user.username }}
       {% endif %}
 
       <h3>{{ product.name }}</h3>
+      <p><strong>Kategori:</strong> {{ product.category.name|default:"Kategori yok" }}</p>
       <p>{{ product.description }}</p>
       <div class="price">₺{{ product.price }}</div>
 
