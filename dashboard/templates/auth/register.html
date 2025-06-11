@@ -8,75 +8,115 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            font-family: 'Segoe UI', 'Montserrat', 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e3e6f3 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
-
         .form-container {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(120deg, #fffbe6 60%, #ffe082 100%);
+            padding: 36px 28px 28px 28px;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(255,193,7,0.10), 0 1.5px 6px rgba(52,58,64,0.08);
             width: 100%;
             max-width: 400px;
         }
-
         h2 {
             text-align: center;
-            margin-bottom: 20px;
-            color: #333;
+            margin-bottom: 24px;
+            color: #343a40;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #fffbe6 60%, #ffe082 100%);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ffc10722;
+            padding: 0.5rem 0;
         }
-
         .form-group {
             margin-bottom: 20px;
         }
-
         label {
             display: block;
-            font-weight: bold;
-            color: #555;
+            font-weight: 700;
+            color: #343a40;
+            margin-bottom: 6px;
         }
-
         input[type="text"],
         input[type="email"],
         input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
+            border-radius: 8px;
+            border: 1.5px solid #ffc107;
+            font-size: 1rem;
             box-sizing: border-box;
+            background: #fffbe6;
+            transition: border 0.2s;
         }
-
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border: 2px solid #343a40;
+            outline: none;
+        }
         button {
             width: 100%;
             padding: 12px;
-            background-color: #28a745;
+            background: linear-gradient(90deg, #343a40 60%, #ffc107 100%);
             border: none;
             color: white;
-            font-size: 18px;
-            border-radius: 5px;
+            font-size: 1.1rem;
+            border-radius: 8px;
             cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 2px 8px #343a4011;
+            transition: background 0.3s, color 0.3s, box-shadow 0.2s;
         }
-
         button:hover {
-            background-color: #218838;
+            background: linear-gradient(90deg, #ffc107 60%, #343a40 100%);
+            color: #232b3e;
+            box-shadow: 0 4px 16px #ffc10733;
         }
-
         .already-registered {
             text-align: center;
             margin-top: 20px;
+            font-size: 1rem;
         }
-
         .already-registered a {
             text-decoration: none;
             color: #007bff;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .already-registered a:hover {
+            color: #343a40;
+            text-decoration: underline;
+        }
+        /* Mesajlar */
+        .form-container div[role="alert"], .form-container .alert {
+            background: #fff3cd;
+            color: #856404;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            box-shadow: 0 1px 4px #ffc10722;
+        }
+        @media (max-width: 500px) {
+            .form-container {
+                padding: 16px 6px 12px 6px;
+                border-radius: 10px;
+            }
+            h2 {
+                font-size: 1.2rem;
+                padding: 0.3rem 0;
+            }
         }
     </style>
 </head>
@@ -87,7 +127,7 @@
 
         {% if messages %}
         {% for message in messages %}
-        <div>{{ message }}</div>
+        <div role="alert">{{ message }}</div>
         {% endfor %}
         {% endif %}
 

@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mağaza - İletişim</title>
+  <link rel="stylesheet" href="{% static 'css/page.css' %}">
+</head>
+<body>
+  <!-- 🛒 Mağaza Navbar -->
+  <nav class="store-navbar">
+    <div class="logo">
+      <a href="{% url 'magaza' %}">🛍️ OziStore</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{% url 'magaza' %}">Anasayfa</a></li>
+      <li><a href="{% url 'about' %}">Hakkımızda</a></li>
+      <li><a href="{% url 'contact' %}">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>İletişim</h1>
+
+    <p>
+      Bizimle iletişime geçmek isterseniz, aşağıdaki bilgilerden veya iletişim formumuzdan rahatlıkla ulaşabilirsiniz.
+      Sizlere en hızlı ve doğru şekilde yardımcı olmak için buradayız!
+    </p>
+
+    <h2>İletişim Bilgileri</h2>
+    <ul>
+      <li><strong>Telefon:</strong> +90 555 123 45 67</li>
+      <li><strong>Email:</strong> destek@ozistore.com</li>
+      <li><strong>Adres:</strong> Örnek Mah. 123. Sok. No:45, İstanbul, Türkiye</li>
+      <li><strong>Çalışma Saatleri:</strong> Pazartesi - Cuma, 09:00 - 18:00</li>
+    </ul>
+
+    <h2>Bize Yazın</h2>
+    <form action="#" method="POST" class="contact-form">
+      <label for="name">Adınız:</label>
+      <input type="text" id="name" name="name" placeholder="Adınızı yazınız" required>
+
+      <label for="email">Email Adresiniz:</label>
+      <input type="email" id="email" name="email" placeholder="Email adresinizi yazınız" required>
+
+      <label for="message">Mesajınız:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Mesajınızı yazınız" required></textarea>
+
+      <button type="submit">Gönder</button>
+    </form>
+
+    <p>
+      Size en kısa sürede geri dönüş yapacağız. İlginiz için teşekkür ederiz!
+    </p>
+  </div>
+</body>
+</html>

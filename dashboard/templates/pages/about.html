@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mağaza - Hakkımızda</title>
+  <link rel="stylesheet" href="{% static 'css/page.css' %}">
+</head>
+<body>
+  <!-- 🛒 Mağaza Navbar -->
+  <nav class="store-navbar">
+    <div class="logo">
+      <a href="{% url 'magaza' %}">🛍️ OziStore</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{% url 'magaza' %}">Anasayfa</a></li>
+      <li><a href="{% url 'about' %}">Hakkımızda</a></li>
+      <li><a href="{% url 'contact' %}">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Hakkımızda</h1>
+
+    <p>
+      OziStore olarak, siz değerli müşterilerimize en kaliteli ürünleri, uygun fiyatlarla ve güvenle sunmak için buradayız.
+      Yıllardır sektörde edindiğimiz deneyimle, alışveriş deneyiminizi kolay, keyifli ve sorunsuz hale getirmeyi amaçlıyoruz.
+    </p>
+
+    <h2>Vizyonumuz</h2>
+    <p>
+      Müşteri memnuniyetini en üst seviyede tutarak, Türkiye'nin en güvenilir ve yenilikçi online mağazalarından biri olmak.
+      Teknolojiyi ve trendleri yakından takip ederek, sizlere her zaman en güncel ve kaliteli ürünleri sunmayı hedefliyoruz.
+    </p>
+
+    <h2>Değerlerimiz</h2>
+    <ul>
+      <li><strong>Müşteri Odaklılık:</strong> Sizlerin memnuniyeti bizim önceliğimizdir.</li>
+      <li><strong>Kalite:</strong> Tüm ürünlerimizi titizlikle seçiyoruz.</li>
+      <li><strong>Şeffaflık:</strong> Doğru ve açık bilgi ile alışverişinizi destekliyoruz.</li>
+      <li><strong>Güven:</strong> Ödeme ve kişisel bilgileriniz bizim için güvende.</li>
+      <li><strong>Hızlı Destek:</strong> Her zaman yanınızda, sorularınızı yanıtlamaya hazırız.</li>
+    </ul>
+
+    <h2>Ekibimiz</h2>
+    <p>
+      OziStore, tutkulu ve alanında uzman bir ekip tarafından yönetilmektedir. Her biri müşteri deneyimini iyileştirmek için çalışmakta,
+      sizlere en iyi hizmeti sunmak için gece gündüz demeden çaba sarf etmektedir.
+    </p>
+
+    <p>
+      Bize gösterdiğiniz ilgi ve güven için teşekkür ederiz. Sizlerle büyümek ve gelişmek için buradayız!
+    </p>
+  </div>
+</body>
+</html>

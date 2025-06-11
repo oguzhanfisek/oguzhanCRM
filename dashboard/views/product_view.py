@@ -80,3 +80,19 @@ def category_add(request):
     else:
         form = CategoryForm()
     return render(request, 'categories/category_add.html', {'form': form})
+
+
+def store_view(request):
+    selected_category_id = request.GET.get('category')
+    categories = ProductCategory.objects.all()
+
+    if selected_category_id:
+        products = Product.objects.filter(category_id=selected_category_id, is_published=True)
+    else:
+        products = Product.objects.filter(is_published=True)
+
+    return render(request, 'products/store.html', {
+        'products': products,
+        'categories': categories,
+        'selected_category': int(selected_category_id) if selected_category_id else None
+    })

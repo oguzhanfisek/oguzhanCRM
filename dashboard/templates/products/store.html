@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mağaza</title>
+  <link rel="stylesheet" href="{% static 'css/store.css' %}">
+</head>
+<body>
+  <!-- 🛒 Mağaza Navbar -->
+  <nav class="store-navbar">
+    <div class="logo">
+      <a href="{% url 'magaza' %}">🛍️ OziStore</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{% url 'magaza' %}">Anasayfa</a></li>
+      <li><a href="{% url 'about' %}">Hakkımızda</a></li>
+      <li><a href="{% url 'contact' %}">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <form method="get" action="{% url 'magaza' %}" class="category-filter-form">
+  <label for="category">Kategori Seç:</label>
+  <select name="category" id="category" onchange="this.form.submit()">
+    <option value="">Tüm Kategoriler</option>
+    {% for cat in categories %}
+      <option value="{{ cat.id }}" {% if selected_category == cat.id %}selected{% endif %}>
+        {{ cat.name }}
+      </option>
+    {% endfor %}
+  </select>
+  </form>
+
+  <main class="store-content">
+    <h2>Ürünler</h2>
+    <div class="product-grid">
+      {% for product in products %}
+        <div class="product-card">
+          {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+          {% else %}
+            <img src="https://via.placeholder.com/200x150?text=Resim+Yok" alt="Resim yok">
+          {% endif %}
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description|truncatewords:15 }}</p>
+          <span class="price-label">{{ product.price }} ₺</span><br>
+          <span class="category-label">{{ product.category.name }}</span>
+        </div>
+      {% empty %}
+        <p>Yayınlanan ürün bulunamadı.<br><small>Yeni ürünler çok yakında burada olacak!</small></p>
+      {% endfor %}
+    </div>
+  </main>
+</body>
+</html>
